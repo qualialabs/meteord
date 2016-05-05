@@ -1,11 +1,9 @@
 set -e
 
 if [ -d /bundle ]; then
-  cd /bundle
-  tar xzf *.tar.gz
-  cd /bundle/bundle/programs/server/
+  cd /bundle/programs/server/
   npm i
-  cd /bundle/bundle/
+  cd /bundle
 elif [[ $BUNDLE_URL ]]; then
   cd /tmp
   curl -L -o bundle.tar.gz $BUNDLE_URL
